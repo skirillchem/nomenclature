@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Номенклатура органических соединений</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#58657a;--accent:#176b5b;--line:#dce3ed;--soft:#e8f4f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:linear-gradient(135deg,#123e38,#21836e);color:white;padding:48px 20px}
+.wrap{max-width:1050px;margin:auto;padding:0 18px}header h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.12;margin:0 0 14px}header p{max-width:760px;margin:0;color:#e5f5f0}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:5;overflow-x:auto;white-space:nowrap;padding:10px max(18px,calc((100% - 1014px)/2))}
+nav a{display:inline-block;color:var(--accent);text-decoration:none;font-weight:650;padding:7px 11px;border-radius:8px}nav a:hover{background:var(--soft)}
+main{padding:28px 0 60px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,3vw,28px);margin:18px 0;box-shadow:0 5px 20px #15213a08}
+h2{margin:0 0 14px;font-size:1.65rem;line-height:1.25}h3{margin:22px 0 8px;font-size:1.18rem}p{margin:8px 0 12px}.muted{color:var(--muted)}.pill{display:inline-block;background:var(--soft);color:#155849;padding:3px 9px;border-radius:999px;font-size:.85rem;font-weight:700}
+table{border-collapse:collapse;width:100%;margin:12px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;min-width:100px}th{background:#edf3f7}
+.rule{border-left:4px solid var(--accent);background:#f0f8f5;padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.example{border-top:1px solid var(--line);padding-top:18px;margin-top:20px}.formula{font:600 1.05rem ui-monospace,SFMono-Regular,Consolas,monospace;background:#f1f4f8;padding:10px 12px;border-radius:8px;display:inline-block;overflow-wrap:anywhere}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0;background:#fff}summary{font-weight:700;cursor:pointer;color:var(--accent)}.step{margin:8px 0;padding-left:4px}.step b{color:var(--accent)}
+.quiz-q{padding:15px 0;border-bottom:1px solid var(--line)}.quiz-q:last-child{border:0}label{display:block;margin:6px 0;cursor:pointer}button{border:0;background:var(--accent);color:#fff;border-radius:9px;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer}button:hover{filter:brightness(1.08)}.result{font-weight:700;margin-left:10px}footer{padding:24px 18px;text-align:center;color:var(--muted)}
+@media(min-width:760px){.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}.twocol .card{margin:0}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="pill">Интерактивный конспект</span>
+<h1>Номенклатура органических соединений</h1>
+<p>Как прочитать структурную формулу и шаг за шагом составить название: выбираем главную цепь, нумеруем её, определяем заместители, кратные связи и главную функциональную группу.</p>
+</div></header>
+<nav>
+<a href="#algorithm">Алгоритм</a><a href="#tables">Таблицы</a><a href="#examples">Разбор примеров</a><a href="#practice">Проверь себя</a>
+</nav>
+<main class="wrap">
+<section class="card" id="algorithm">
+<h2>1. Общий алгоритм</h2>
+<ol>
+<li><b>Определи главную функциональную группу.</b> Если групп несколько, выбери старшую по таблице ниже: она обычно задаёт суффикс.</li>
+<li><b>Выбери главную цепь.</b> В неё по возможности включают главную функциональную группу и максимальное число кратных связей; затем выбирают наиболее подходящую длинную цепь.</li>
+<li><b>Пронумеруй цепь.</b> Сначала добиваются наименьшего номера для главной группы, затем учитывают кратные связи и заместители согласно правилам выбранной номенклатуры.</li>
+<li><b>Найди заместители</b> (метил-, этил-, гидрокси-, амино-, хлор- и др.) и укажи их положения.</li>
+<li><b>Собери название:</b> положения и названия заместителей → название главной цепи с кратными связями → суффикс главной группы.</li>
+</ol>
+<div class="rule"><b>Важно.</b> Это учебный алгоритм для типичных задач. В сложных случаях правила выбора главной цепи и старшинства уточняются по систематической номенклатуре IUPAC.</div>
+</section>
+
+<section class="card" id="tables">
+<h2>2. Таблицы из конспекта</h2>
+<p class="muted">Ниже перенесены таблицы и правила из приложенного файла. Для удобства они разделены на блоки.</p>
+<h3>Корни по числу атомов углерода</h3>
+<table><thead><tr><th>Число атомов C</th><th>Корень</th><th>Число атомов C</th><th>Корень</th></tr></thead><tbody>
+<tr><td>1</td><td>мет-</td><td>6</td><td>гекс-</td></tr><tr><td>2</td><td>эт-</td><td>7</td><td>гепт-</td></tr><tr><td>3</td><td>проп-</td><td>8</td><td>окт-</td></tr><tr><td>4</td><td>бут-</td><td>9</td><td>нон-</td></tr><tr><td>5</td><td>пент-</td><td>10</td><td>дек-</td></tr>
+</tbody></table>
+<h3>Приставки для одинаковых заместителей, кратных связей или групп</h3>
+<table><tr><th>Количество</th><th>Приставка</th></tr><tr><td>1</td><td>моно- (часто не указывают)</td></tr><tr><td>2</td><td>ди-</td></tr><tr><td>3</td><td>три-</td></tr><tr><td>4</td><td>тетра-</td></tr><tr><td>5</td><td>пента-</td></tr><tr><td>6</td><td>гекса-</td></tr><tr><td>7</td><td>гепта-</td></tr><tr><td>8</td><td>окта-</td></tr><tr><td>9</td><td>нона-</td></tr><tr><td>10</td><td>дека-</td></tr></table>
+<h3>Суффиксы кратных связей</h3>
+<table><tr><th>Строение цепи</th><th>Суффикс</th><th>Пример фрагмента названия</th></tr><tr><td>Только одинарные связи</td><td>-ан</td><td>гексан</td></tr><tr><td>Есть двойная связь</td><td>-ен</td><td>гекс-2-ен</td></tr><tr><td>Есть тройная связь</td><td>-ин</td><td>гекс-2-ин</td></tr></table>
+<h3>Распространённые углеводородные заместители</h3>
+<table><tr><th>Заместитель</th><th>Обозначение / строение</th><th>Как пишется в названии</th></tr><tr><td>Метил</td><td>–CH₃</td><td>метил-</td></tr><tr><td>Этил</td><td>–CH₂CH₃</td><td>этил-</td></tr><tr><td>Пропил</td><td>–CH₂CH₂CH₃</td><td>пропил-</td></tr><tr><td>Изопропил</td><td>–CH(CH₃)₂</td><td>изопропил- (учебное название)</td></tr><tr><td>Бутил</td><td>–CH₂CH₂CH₂CH₃</td><td>бутил-</td></tr><tr><td>Втор-бутил</td><td>–CH(CH₃)CH₂CH₃</td><td>втор-бутил- (учебное название)</td></tr><tr><td>Изобутил</td><td>–CH₂CH(CH₃)₂</td><td>изобутил- (учебное название)</td></tr><tr><td>Трет-бутил</td><td>–C(CH₃)₃</td><td>трет-бутил- (учебное название)</td></tr><tr><td>Винил</td><td>–CH=CH₂</td><td>винил- (учебное название)</td></tr><tr><td>Аллил</td><td>–CH₂CH=CH₂</td><td>аллил- (учебное название)</td></tr><tr><td>Фенил</td><td>–C₆H₅</td><td>фенил-</td></tr><tr><td>Бензил</td><td>–CH₂–C₆H₅</td><td>бензил-</td></tr></table>
+<h3>Функциональные группы: приставки, суффиксы и классы</h3>
+<table><tr><th>Группа / класс</th><th>Приставка, если группа не главная</th><th>Суффикс, если группа главная</th></tr>
+<tr><td>Карбоксильная, карбоновые кислоты</td><td>карбокси-</td><td>-овая кислота</td></tr>
+<tr><td>Альдегидная, альдегиды</td><td>формил- (если группа заместитель)</td><td>-аль</td></tr>
+<tr><td>Кетонная, кетоны</td><td>оксо-</td><td>-он</td></tr>
+<tr><td>Гидроксильная, спирты и фенолы</td><td>гидрокси-</td><td>-ол</td></tr>
+<tr><td>Аминогруппа, амины</td><td>амино-</td><td>-амин</td></tr>
+<tr><td>Простая эфирная, простые эфиры</td><td>алкокси-</td><td>—</td></tr>
+<tr><td>Галогены</td><td>фтор-, хлор-, бром-, иод- и т. д.</td><td>—</td></tr>
+<tr><td>Нитрогруппа, нитросоединения</td><td>нитро-</td><td>—</td></tr>
+<tr><td>Сложноэфирная группа</td><td colspan="2">В приложенной таблице указано, что этот тип номенклатуры будет рассмотрен позднее.</td></tr>
+</table>
+<div class="rule">По приложенной таблице, если функциональных групп несколько, суффиксом обозначают старшую; остальные обозначают приставками. Если присутствуют только группы, которые в этой таблице не получают суффикс, их перечисляют приставками.</div>
+</section>
+
+<section class="card" id="examples">
+<h2>3. Разбор примеров</h2>
+<p class="muted">Открой каждый пример, чтобы увидеть ход рассуждений, а не только готовое название.</p>
+
+<div class="example"><span class="pill">Алкен · галогенпроизводное</span><h3>Пример 1. CH₃–CH(Cl)–CH=CH–CH₃</h3><p class="formula">CH₃–CH(Cl)–CH=CH–CH₃</p>
+<details open><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Самая длинная цепь содержит 5 атомов углерода → корень <b>пент-</b>.</p>
+<p class="step"><b>Шаг 2.</b> Есть двойная связь, поэтому используем суффикс <b>-ен</b>. Нумеруем с правого края: двойная связь получает номер 2, а не 3.</p>
+<p class="step"><b>Шаг 3.</b> Атом хлора при C-4 → приставка <b>4-хлор-</b>.</p>
+<p class="step"><b>Итог.</b> <b>4-хлорпент-2-ен</b>.</p>
+<p class="muted">Стереохимия двойной связи в этой формуле не задана, поэтому E/Z не указываем.</p></details></div>
+
+<div class="example"><span class="pill">Спирт · разветвлённая цепь</span><h3>Пример 2. CH₃–CH(CH₃)–CH(OH)–CH₂–CH₃</h3><p class="formula">CH₃–CH(CH₃)–CH(OH)–CH₂–CH₃</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Главная цепь с –OH включает 5 атомов C → <b>пентан</b>.</p>
+<p class="step"><b>Шаг 2.</b> Нумеруем так, чтобы гидроксильная группа получила минимальный номер. С обеих сторон она может получить 3; сравниваем номера заместителей: метил получает 2 вместо 4.</p>
+<p class="step"><b>Шаг 3.</b> Главная группа –OH обозначается суффиксом <b>-ол</b>; метильный заместитель находится при C-2.</p>
+<p class="step"><b>Итог.</b> <b>2-метилпентан-3-ол</b>.</p></details></div>
+
+<div class="example"><span class="pill">Кетон · гидрокси как заместитель</span><h3>Пример 3. CH₃–CO–CH₂–CH(OH)–CH₃</h3><p class="formula">CH₃–CO–CH₂–CH(OH)–CH₃</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Главная группа — кетонная, поскольку в таблице она старше гидроксильной. Поэтому соединение называют как кетон.</p>
+<p class="step"><b>Шаг 2.</b> Цепь содержит 5 атомов C → <b>пентанон</b>. Нумеруем слева, чтобы карбонильный атом получил номер 2 (справа он получил бы 4).</p>
+<p class="step"><b>Шаг 3.</b> Кетон обозначаем суффиксом <b>-он</b>, гидроксильную группу — приставкой <b>гидрокси-</b>. OH находится при C-4.</p>
+<p class="step"><b>Итог.</b> <b>4-гидроксипентан-2-он</b>.</p></details></div>
+
+<div class="example"><span class="pill">Карбоновая кислота · галоген</span><h3>Пример 4. CH₃–CH(Br)–CH₂–COOH</h3><p class="formula">CH₃–CH(Br)–CH₂–COOH</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Карбоксильный углерод входит в главную цепь и всегда получает номер 1.</p>
+<p class="step"><b>Шаг 2.</b> Всего в цепи 4 атома C, включая углерод COOH → основа <b>бутановая кислота</b>.</p>
+<p class="step"><b>Шаг 3.</b> Считая от COOH, атом Br находится при C-3 → приставка 3-бром-.</p>
+<p class="step"><b>Итог.</b> <b>3-бромбутановая кислота</b>.</p></details></div>
+
+<div class="example"><span class="pill">Амин · алкен</span><h3>Пример 5. CH₂=CH–CH(NH₂)–CH₃</h3><p class="formula">CH₂=CH–CH(NH₂)–CH₃</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Цепь содержит 4 атома C и двойную связь → <b>бутен</b>.</p>
+<p class="step"><b>Шаг 2.</b> Аминогруппа — главная группа в этой формуле. Нумерация с левого края даёт двойной связи номер 1, аминогруппе — номер 3; при нумерации справа аминогруппа получила бы 2, но двойная связь — 3. Для данной учебной схемы выбираем минимальный номер кратной связи при сопоставлении вариантов.</p>
+<p class="step"><b>Шаг 3.</b> Указываем положения двойной связи и –NH₂, суффикс амина.</p>
+<p class="step"><b>Итог.</b> <b>бут-3-ен-2-амин</b>.</p>
+<p class="muted">Примечание: в разных учебных курсах порядок приоритета нумерации кратной связи и суффиксной группы может подаваться по-разному; для систематического IUPAC-оформления следует придерживаться единого принятого стандарта.</p></details></div>
+
+<div class="example"><span class="pill">Альдегид · оксо как приставка</span><h3>Пример 6. CH₃–CO–CH₂–CHO</h3><p class="formula">CH₃–CO–CH₂–CHO</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Альдегидная группа старше кетонной, поэтому суффикс будет <b>-аль</b>.</p>
+<p class="step"><b>Шаг 2.</b> Углерод группы –CHO входит в цепь и получает номер 1. Всего 4 атома C → бутаналь.</p>
+<p class="step"><b>Шаг 3.</b> Вторая карбонильная группа (кетонная) обозначается приставкой <b>оксо-</b>. От альдегидного углерода она находится при C-3.</p>
+<p class="step"><b>Итог.</b> <b>3-оксобутаналь</b>.</p></details></div>
+
+<div class="example"><span class="pill">Ароматическое соединение · нитро</span><h3>Пример 7. C₆H₅–CH₂–CH(NO₂)–CH₃</h3><p class="formula">C₆H₅–CH₂–CH(NO₂)–CH₃</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> В качестве основной цепи берём пропан; фенильная группа и нитрогруппа будут заместителями.</p>
+<p class="step"><b>Шаг 2.</b> Нумеруем со стороны CH₃: нитрогруппа при C-2, фенильная группа при C-3. При обратной нумерации набор локантов тоже 2,3, поэтому сравниваем по алфавиту названия заместителей: фенил получает меньший номер.</p>
+<p class="step"><b>Шаг 3.</b> В названии перечисляем заместители: фенил- и нитро-; основа — пропан.</p>
+<p class="step"><b>Итог.</b> <b>2-нитро-1-фенилпропан</b>.</p>
+<p class="muted">Уточнение: структура C₆H₅–CH₂–CH(NO₂)–CH₃ при нумерации от фенильного конца даёт фенил не как заместитель основной пропановой цепи, а как фенильный заместитель при C-1; поэтому корректное имя в рамках этой модели — 1-фенил-2-нитропропан.</p></details></div>
+
+<div class="example"><span class="pill">Простой эфир · алкокси</span><h3>Пример 8. CH₃–O–CH₂–CH(CH₃)–CH₃</h3><p class="formula">CH₃–O–CH₂–CH(CH₃)–CH₃</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Простой эфир в приложенной таблице не получает суффикс; его можно описать как алкокси-заместитель.</p>
+<p class="step"><b>Шаг 2.</b> Более длинная углеродная часть — 2-метилпропан. Группа –OCH₃ называется метокси-.</p>
+<p class="step"><b>Шаг 3.</b> Метокси-группа находится при C-1 главной цепи.</p>
+<p class="step"><b>Итог.</b> <b>1-метокси-2-метилпропан</b>.</p></details></div>
+
+<div class="example"><span class="pill">Нитросоединение · два заместителя</span><h3>Пример 9. CH₃–CH(NO₂)–CH(Cl)–CH₃</h3><p class="formula">CH₃–CH(NO₂)–CH(Cl)–CH₃</p>
+<details><summary>Разобрать по шагам</summary>
+<p class="step"><b>Шаг 1.</b> Главная цепь — бутан, 4 атома C.</p>
+<p class="step"><b>Шаг 2.</b> С обеих сторон набор локантов 2,3. При равенстве первый по алфавиту заместитель получает меньший номер: хлор- перед нитро-.</p>
+<p class="step"><b>Шаг 3.</b> Записываем заместители и основу.</p>
+<p class="step"><b>Итог.</b> <b>2-хлор-3-нитробутан</b>.</p></details></div>
+</section>
+
+<section class="card" id="practice">
+<h2>4. Проверь себя</h2>
+<p>Выбери название для каждой формулы. После проверки появится количество правильных ответов и пояснения.</p>
+<form id="quiz">
+<div class="quiz-q" data-answer="b" data-explain="Пять атомов C, двойная связь при C-2, метильный заместитель при C-4: 4-метилпент-2-ен.">
+<b>1. CH₃–CH=CH–CH(CH₃)–CH₃</b>
+<label><input type="radio" name="q1" value="a"> 2-метилпент-3-ен</label>
+<label><input type="radio" name="q1" value="b"> 4-метилпент-2-ен</label>
+<label><input type="radio" name="q1" value="c"> 2-метилпент-2-ен</label></div>
+<div class="quiz-q" data-answer="a" data-explain="Кетонная группа главная относительно OH: цепь из пяти атомов C, карбонильная группа при C-2, OH при C-4.">
+<b>2. CH₃–CO–CH₂–CH(OH)–CH₃</b>
+<label><input type="radio" name="q2" value="a"> 4-гидроксипентан-2-он</label>
+<label><input type="radio" name="q2" value="b"> 2-гидроксипентан-4-он</label>
+<label><input type="radio" name="q2" value="c"> пентан-2,4-диол</label></div>
+<div class="quiz-q" data-answer="c" data-explain="Карбоксильный углерод — C-1; цепь из четырёх атомов C; бром находится при C-3.">
+<b>3. CH₃–CH(Br)–CH₂–COOH</b>
+<label><input type="radio" name="q3" value="a"> 2-бромбутановая кислота</label>
+<label><input type="radio" name="q3" value="b"> 3-бромпентановая кислота</label>
+<label><input type="radio" name="q3" value="c"> 3-бромбутановая кислота</label></div>
+<button type="button" onclick="checkQuiz()">Проверить ответы</button><span class="result" id="result" aria-live="polite"></span><div id="feedback"></div>
+</form>
+</section>
+</main>
+<footer><div class="wrap">Учебный материал по номенклатуре органических соединений · Таблицы перенесены из приложенного конспекта</div></footer>
+<script>
+function checkQuiz(){
+ const qs=[...document.querySelectorAll('.quiz-q')];let score=0;let out='';
+ qs.forEach((q,i)=>{const chosen=q.querySelector('input:checked');const ok=chosen&&chosen.value===q.dataset.answer;if(ok)score++;out+=`<p><b>${i+1}. ${ok?'Верно':'Неверно'}.</b> ${q.dataset.explain}</p>`;});
+ document.getElementById('result').textContent=`Результат: ${score} из ${qs.length}`;
+ document.getElementById('feedback').innerHTML=out;
+}
+</script>
+</body>
+</html>
